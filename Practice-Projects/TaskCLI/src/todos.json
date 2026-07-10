@@ -1,12 +1,6 @@
 [
-  {
-  "id": 1,
-  "description": "Todo 1",
-  "status": "Todo"
-  },
-  {
-    "id": 2,
-    "description": "Todo 2",
-    "status": "In Progress"
-  }
+{"id":1,"status":"TODO","description":"Todo 1"},
+{"id":2,"status":"IN_PROGRESS","description":"Todo 2"},
+{"id":3,"status":"TODO","description":"Todo 3"},
+{"id":4,"status":"TODO","description":"Todo 4"}
 ]
