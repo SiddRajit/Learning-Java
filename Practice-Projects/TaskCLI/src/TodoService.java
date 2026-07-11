@@ -88,4 +88,55 @@ public class TodoService {
             throw new RuntimeException(e);
         }
     }
+
+    public void updateTodo(int id, String description) {
+        Todo todo = findTodoById(id);
+        todo.setDescription(description);
+        System.out.println("Todo with ID: " + id + " was updated.");
+        saveChanges();
+    }
+
+    public void deleteTodo(int id) {
+        todos.removeIf(todo -> todo.getId() == id);
+        saveChanges();
+        System.out.println("Todo with ID: " + id + " was deleted");
+    }
+
+    public void markAsDone(int id) {
+        Todo todo = findTodoById(id);
+
+        if (todo == null) {
+            System.out.println("Todo not found");
+            return;
+        }
+
+        todo.setStatus(Status.DONE);
+        System.out.println("Todo with ID: " + id + " status set to Done");
+        saveChanges();
+    }
+
+    public void markAsInProgress(int id) {
+        Todo todo = findTodoById(id);
+
+        if (todo == null) {
+            System.out.println("Todo not found");
+            return;
+        }
+
+        todo.setStatus(Status.IN_PROGRESS);
+        System.out.println("Todo with ID: " + id + " status set to In Progress");
+
+        saveChanges();
+    }
+
+    private Todo findTodoById(int id) {
+        for (Todo todo : todos) {
+            if (todo.getId() == id) {
+                return todo;
+            }
+        }
+
+        System.out.println("Todo was not found");
+        return null;
+    }
 }

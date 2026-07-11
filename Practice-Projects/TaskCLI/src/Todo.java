@@ -78,9 +78,17 @@ public class Todo {
         return status;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
-        return "id: " + id + ", description: " + description.strip() + ", status: " + status.toString();
+        return "id: " + id + ", description: " + description.strip() + ", status: " + status.getValue();
     }
 
 }

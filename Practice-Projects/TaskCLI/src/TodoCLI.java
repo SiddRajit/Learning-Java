@@ -16,6 +16,7 @@ public class TodoCLI {
         switch (command) {
             case "add" :
                 todoService.addTodo(args[1]);
+                break;
             case "list":
                 if (args.length == 1) {
                     todoService.listTodos("All");
@@ -23,14 +24,19 @@ public class TodoCLI {
                 } else {
                     todoService.listTodos(args[1]);
                 }
+                break;
             case "update":
-                // update todo
+                todoService.updateTodo(Integer.parseInt(args[1]), args[2]);
+                break;
             case "delete":
-                // delete todo
+                todoService.deleteTodo(Integer.parseInt(args[1]));
+                break;
             case "mark-in-progress":
-                // mark todo as in progress
+                todoService.markAsInProgress(Integer.parseInt(args[1]));
+                break;
             case "mark-done":
-                // mark todo as done
+                todoService.markAsDone(Integer.parseInt(args[1]));
+                break;
         }
     }
 }
