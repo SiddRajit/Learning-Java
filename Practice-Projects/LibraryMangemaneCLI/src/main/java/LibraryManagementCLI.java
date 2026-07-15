@@ -1,7 +1,5 @@
 
-
 public class LibraryManagementCLI {
-
 
   public static void main(String[] args) {
 
@@ -23,7 +21,19 @@ public class LibraryManagementCLI {
       case "add":
         bookService.addBook(args[1], args[2], Integer.parseInt(args[3]));
         break;
-    
+
+      case "searchByTitle":
+        bookService.searchBookByTitle(args[1]);
+        break;
+
+      case "searchByAuthor":
+        bookService.searchBookByAuthor(args[1]);
+        break;
+
+      case "delete":
+        bookService.deleteBook(Integer.parseInt(args[1]));
+        break;
+
       default:
         break;
     }
